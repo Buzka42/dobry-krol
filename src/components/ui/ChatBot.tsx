@@ -12,6 +12,7 @@ import {
   Mail,
   Star
 } from 'lucide-react';
+import Image from 'next/image';
 
 interface Message {
   id: string;
@@ -105,7 +106,7 @@ const ChatBot = () => {
       <AnimatePresence>
         {!isOpen && (
           <motion.button
-            className="fixed bottom-6 right-6 z-50 w-20 h-20 neo-border bg-gradient-to-br from-[var(--gold-primary)] to-[var(--gold-dark)] rounded-full overflow-hidden group"
+            className="fixed bottom-6 right-6 z-50 w-60 h-60 overflow-visible group"
             onClick={() => setIsOpen(true)}
             whileHover={{ scale: 1.1, rotate: 5 }}
             whileTap={{ scale: 0.95 }}
@@ -122,17 +123,15 @@ const ChatBot = () => {
               y: { duration: 2, repeat: Infinity, ease: "easeInOut" }
             }}
           >
-            {/* King Character - Using CSS to create a simple king face */}
-            <div className="w-full h-full bg-gradient-to-b from-yellow-200 to-yellow-300 flex flex-col items-center justify-center relative">
-              {/* Crown */}
-              <div className="absolute -top-1 left-1/2 transform -translate-x-1/2">
-                <Crown className="w-6 h-6 text-yellow-600" />
-                <div className="absolute top-0 left-1 w-1 h-1 bg-red-500 rounded-full"></div>
-                <div className="absolute top-0 right-1 w-1 h-1 bg-blue-500 rounded-full"></div>
-              </div>
-              
-              {/* Face */}
-              <div className="text-2xl mt-2">👑</div>
+            {/* King Image */}
+            <div className="relative w-full h-full">
+              <Image 
+                src="/img/krol.png" 
+                alt="Dobry Król Chatbot" 
+                fill
+                className="object-contain"
+                priority
+              />
               
               {/* Notification Badge */}
               <motion.div

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Crown, Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +19,7 @@ const Header = () => {
 
   const navigationItems = [
     { href: '/', label: 'Strona Główna' },
-    { href: '/jak-sprzedac', label: 'Jak Sprzedać' },
+    { href: '/jak-sprzedajemy', label: 'Jak Sprzedajemy' },
     { href: '/faq', label: 'FAQ' },
     { href: '/kontakt', label: 'Kontakt' },
   ];
@@ -33,8 +34,14 @@ const Header = () => {
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="w-10 h-10 golden-accent rotate-12 rounded-full neo-border-small mr-3 flex items-center justify-center">
-              <Crown className="w-6 h-6 text-black" />
+            <div className="relative w-12 h-12 mr-3">
+              <Image 
+                src="/img/logo.png" 
+                alt="Dobry Król Logo" 
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
             <Link href="/" className="royal-title text-2xl font-bold tracking-tight transition-all duration-300 hover:scale-105">
               <span className="transition-transform duration-300 hover:-translate-y-1">Dobry Król</span>
