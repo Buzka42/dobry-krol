@@ -22,7 +22,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-[15%] left-[2%] w-10 h-10 md:w-24 md:h-24 -rotate-6 animate-float-reverse flex items-center justify-center">
+          <div className="absolute bottom-[25%] left-[2%] w-10 h-10 md:w-24 md:h-24 -rotate-6 animate-float-reverse flex items-center justify-center">
             <div className="relative w-full h-full">
               <Image 
                 src="/img/coin.png" 
@@ -54,8 +54,8 @@ export default function HomePage() {
               ZAUFANY DORADCA W SPRZEDAŻY MIESZKANIA
             </h1>
             
-            <h2 className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-6">
-              <span className="tracking-widest">WYCENIAMY</span> • <span className="tracking-widest">NEGOCJUJEMY</span> • <span className="tracking-widest">SPRZEDAJEMY</span> MIESZKANIA W WARSZAWIE
+            <h2 className="text-base md:text-2xl text-gray-600 max-w-2xl mx-auto mb-6">
+              <span className="tracking-widest">WYCENIAMY</span> • <span className="tracking-widest">NEGOCJUJEMY</span> • <span className="tracking-widest">SPRZEDAJEMY</span><br/><span className="tracking-widest">MIESZKANIA W WARSZAWIE</span>
             </h2>
             
             <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-10">

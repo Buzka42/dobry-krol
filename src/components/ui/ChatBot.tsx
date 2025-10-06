@@ -129,7 +129,7 @@ const ChatBot = ({ isOpen: externalIsOpen, setIsOpen: externalSetIsOpen }: ChatB
       <AnimatePresence>
         {!isOpen && (
           <motion.button
-            className="fixed bottom-6 right-6 z-50 w-28 h-28 md:w-40 md:h-40 overflow-visible group"
+            className="fixed bottom-6 right-6 z-50 w-31 h-31 md:w-44 md:h-44 overflow-visible group"
             onClick={() => setIsOpen(true)}
             whileHover={{ scale: 1.1, rotate: 5 }}
             whileTap={{ scale: 0.95 }}
