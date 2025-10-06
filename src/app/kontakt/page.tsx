@@ -17,6 +17,7 @@ import {
   CheckCircle,
   Send
 } from 'lucide-react';
+import { openChat } from '../../components/ui/ChatBot';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -79,27 +80,6 @@ export default function ContactPage() {
     }, 2000);
   };
 
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: "Telefon",
-      content: "+48 123 456 789",
-      subtitle: "Dostępny 24/7 dla pilnych spraw dotyczących sprzedaży mieszkań"
-    },
-    {
-      icon: Mail,
-      title: "Email", 
-      content: "kontakt@dobrykrol.pl",
-      subtitle: "Odpowiadamy w ciągu 24h na zapytania o sprzedaż nieruchomości"
-    },
-    {
-      icon: MapPin,
-      title: "Adres",
-      content: "ul. Królewska 123, 00-001 Warszawa", 
-      subtitle: "Biuro otwarte Pon-Pt 9:00-18:00 - bezpłatne konsultacje"
-    }
-  ];
-
   if (isSubmitted) {
     return (
       <Layout>
@@ -128,7 +108,7 @@ export default function ContactPage() {
     <Layout>
       <section className="relative overflow-hidden bg-white pt-32 pb-24 md:pt-40 md:pb-32">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-[20%] right-[10%] w-32 h-32 rotate-12 animate-float flex items-center justify-center">
+          <div className="absolute top-[15%] right-[2%] w-12 h-12 md:w-32 md:h-32 rotate-12 animate-float flex items-center justify-center">
             <div className="relative w-full h-full">
               <Image 
                 src="/img/coin.png" 
@@ -137,11 +117,11 @@ export default function ContactPage() {
                 className="object-contain"
               />
               <div className="absolute inset-0 flex items-center justify-center transform -translate-x-[5%] -translate-y-[5%]">
-                <MessageCircle className="w-12 h-12 text-black" />
+                <MessageCircle className="w-6 h-6 md:w-12 md:h-12 text-black" />
               </div>
             </div>
           </div>
-          <div className="absolute bottom-[20%] left-[5%] w-24 h-24 -rotate-6 animate-float-reverse flex items-center justify-center">
+          <div className="absolute bottom-[15%] left-[5%] w-12 h-12 md:w-24 md:h-24 -rotate-6 animate-float-reverse flex items-center justify-center">
             <div className="relative w-full h-full">
               <Image 
                 src="/img/coin.png" 
@@ -150,7 +130,7 @@ export default function ContactPage() {
                 className="object-contain"
               />
               <div className="absolute inset-0 flex items-center justify-center transform -translate-x-[5%] -translate-y-[5%]">
-                <Crown className="w-8 h-8 text-black" />
+                <Crown className="w-4 h-4 md:w-8 md:h-8 text-black" />
               </div>
             </div>
           </div>
@@ -170,7 +150,10 @@ export default function ContactPage() {
               <a href="#formularz" className="px-8 py-4 bg-yellow-300 text-black font-bold hover:-translate-y-1 transition-all duration-300 neo-border">
                 Wyceń mieszkanie
               </a>
-              <button className="px-8 py-4 golden-accent text-black font-bold hover:-translate-y-1 transition-all duration-300 neo-border">
+              <button 
+                onClick={openChat}
+                className="px-8 py-4 golden-accent text-black font-bold hover:-translate-y-1 transition-all duration-300 neo-border"
+              >
                 Zadaj pytanie asystentowi
               </button>
             </div>
@@ -562,34 +545,26 @@ export default function ContactPage() {
 
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-bold royal-title mb-6">Informacje Kontaktowe</h2>
+                <h2 className="text-3xl font-bold royal-title mb-6">Masz pytania?</h2>
                 <p className="text-gray-600 mb-8">
-                  Wybierz najwygodniejszy dla Ciebie sposób kontaktu. Jesteśmy dostępni dla naszych klientów.
+                  Skorzystaj z naszego asystenta, który jest dostępny 24/7 i z chęcią odpowie na wszystkie Twoje pytania!
                 </p>
               </div>
 
-              <div className="space-y-6">
-                {contactInfo.map((info, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start space-x-4 p-6 bg-white neo-border neo-hover"
-                  >
-                    <div className="w-12 h-12 bg-yellow-300 rounded-full flex items-center justify-center neo-border-small">
-                      <info.icon className="w-6 h-6 text-black" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-lg mb-1 royal-title">
-                        {info.title}
-                      </h3>
-                      <p className="text-gray-800 font-medium mb-1">
-                        {info.content}
-                      </p>
-                      <p className="text-gray-600 text-sm">
-                        {info.subtitle}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+              <div className="bg-white p-8 neo-border text-center">
+                <MessageCircle className="w-12 h-12 text-[var(--gold-primary)] mx-auto mb-4" />
+                <h3 className="text-2xl font-bold royal-title mb-4">
+                  Porozmawiaj z naszym asystentem
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  Nasz wirtualny doradca jest dostępny 24/7 i z checią odpowie na wszystkie Twoje pytania!
+                </p>
+                <button 
+                  onClick={openChat}
+                  className="neo-button-primary"
+                >
+                  Rozpocznij rozmowę
+                </button>
               </div>
             </div>
           </div>

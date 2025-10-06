@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Crown, Mail, Phone, MapPin, Shield } from 'lucide-react';
+import { Crown, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 const Footer = () => {
   return (
     <footer className="bg-[var(--parchment)] border-t border-[var(--gold-light)]">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           {/* Company Info */}
           <motion.div 
@@ -44,7 +44,7 @@ const Footer = () => {
             <nav className="space-y-2">
               {[
                 { href: '/', label: 'Strona Główna' },
-                { href: '/jak-sprzedac', label: 'Jak Sprzedać' },
+                { href: '/jak-sprzedajemy', label: 'Jak Sprzedajemy' },
                 { href: '/faq', label: 'FAQ' },
                 { href: '/kontakt', label: 'Kontakt' },
               ].map((link) => (
@@ -82,43 +82,6 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div 
-            className="space-y-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="royal-title text-lg medieval-decoration">Kontakt</h4>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-[var(--gold-primary)]" />
-                <span className="text-sm">+48 123 456 789</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 text-[var(--gold-primary)]" />
-                <span className="text-sm">kontakt@dobrykrol.pl</span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <MapPin className="h-4 w-4 text-[var(--gold-primary)] mt-0.5" />
-                <div className="text-sm">
-                  <p>ul. Królewska 123</p>
-                  <p>00-001 Warszawa</p>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA Button */}
-            <motion.button
-              className="w-full mt-4 px-4 py-2 bg-[var(--gold-primary)] hover:bg-[var(--gold-dark)] text-white rounded-lg font-medium transition-colors golden-glow"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Rozpocznij Rozmowę
-            </motion.button>
           </motion.div>
         </div>
 

@@ -26,6 +26,7 @@ import {
 import Layout from '../../components/layout/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
+import { openChat } from '../../components/ui/ChatBot';
 
 export default function JakSprzedajemyPage() {
   const steps = [
@@ -90,7 +91,7 @@ export default function JakSprzedajemyPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white pt-32 pb-24 md:pt-40 md:pb-32">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-[20%] right-[10%] w-32 h-32 rotate-12 animate-float flex items-center justify-center">
+          <div className="absolute top-[15%] right-[2%] w-12 h-12 md:w-32 md:h-32 rotate-12 animate-float flex items-center justify-center">
             <div className="relative w-full h-full">
               <Image 
                 src="/img/coin.png" 
@@ -99,11 +100,11 @@ export default function JakSprzedajemyPage() {
                 className="object-contain"
               />
               <div className="absolute inset-0 flex items-center justify-center transform -translate-x-[5%] -translate-y-[5%]">
-                <Home className="w-12 h-12 text-black" />
+                <Home className="w-6 h-6 md:w-12 md:h-12 text-black" />
               </div>
             </div>
           </div>
-          <div className="absolute bottom-[20%] left-[5%] w-24 h-24 -rotate-6 animate-float-reverse flex items-center justify-center">
+          <div className="absolute bottom-[15%] left-[2%] w-10 h-10 md:w-24 md:h-24 -rotate-6 animate-float-reverse flex items-center justify-center">
             <div className="relative w-full h-full">
               <Image 
                 src="/img/coin.png" 
@@ -112,7 +113,7 @@ export default function JakSprzedajemyPage() {
                 className="object-contain"
               />
               <div className="absolute inset-0 flex items-center justify-center transform -translate-x-[5%] -translate-y-[5%]">
-                <Crown className="w-8 h-8 text-black" />
+                <Crown className="w-4 h-4 md:w-8 md:h-8 text-black" />
               </div>
             </div>
           </div>
@@ -132,7 +133,10 @@ export default function JakSprzedajemyPage() {
               <a href="/kontakt#formularz" className="px-8 py-4 bg-yellow-300 text-black font-bold hover:-translate-y-1 transition-all duration-300 neo-border">
                 Zgłoś mieszkanie
               </a>
-              <button className="px-8 py-4 golden-accent text-black font-bold hover:-translate-y-1 transition-all duration-300 neo-border">
+              <button 
+                onClick={openChat}
+                className="px-8 py-4 golden-accent text-black font-bold hover:-translate-y-1 transition-all duration-300 neo-border"
+              >
                 Bezpłatna wycena
               </button>
             </div>

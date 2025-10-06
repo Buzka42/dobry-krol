@@ -1,13 +1,15 @@
 import Layout from '../components/layout/Layout';
 import { Crown, Star, Shield } from 'lucide-react';
 import Image from 'next/image';
+import { openChat } from '../components/ui/ChatBot';
 
 export default function HomePage() {
+  
   return (
     <Layout>
       <section className="relative overflow-hidden bg-white pt-32 pb-24 md:pt-40 md:pb-32">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-[20%] right-[10%] w-32 h-32 rotate-12 animate-float flex items-center justify-center">
+          <div className="absolute top-[15%] right-[2%] w-12 h-12 md:w-32 md:h-32 rotate-12 animate-float flex items-center justify-center">
             <div className="relative w-full h-full">
               <Image 
                 src="/img/coin.png" 
@@ -16,11 +18,11 @@ export default function HomePage() {
                 className="object-contain"
               />
               <div className="absolute inset-0 flex items-center justify-center transform -translate-x-[5%] -translate-y-[5%]">
-                <Crown className="w-12 h-12 text-black" />
+                <Crown className="w-6 h-6 md:w-12 md:h-12 text-black" />
               </div>
             </div>
           </div>
-          <div className="absolute bottom-[20%] left-[5%] w-24 h-24 -rotate-6 animate-float-reverse flex items-center justify-center">
+          <div className="absolute bottom-[15%] left-[2%] w-10 h-10 md:w-24 md:h-24 -rotate-6 animate-float-reverse flex items-center justify-center">
             <div className="relative w-full h-full">
               <Image 
                 src="/img/coin.png" 
@@ -29,7 +31,7 @@ export default function HomePage() {
                 className="object-contain"
               />
               <div className="absolute inset-0 flex items-center justify-center transform -translate-x-[5%] -translate-y-[5%]">
-                <Crown className="w-8 h-8 text-black" />
+                <Crown className="w-4 h-4 md:w-8 md:h-8 text-black" />
               </div>
             </div>
           </div>
@@ -37,12 +39,23 @@ export default function HomePage() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
+            <div className="flex justify-center mb-4">
+              <div className="relative w-72 h-32 md:w-96 md:h-40">
+                <Image 
+                  src="/img/dk.png" 
+                  alt="Dobry Król" 
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
+            
             <h1 className="royal-title text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black mb-6">
-              DOBRY KRÓL — ZAUFANY DORADCA W SPRZEDAŻY MIESZKANIA
+              ZAUFANY DORADCA W SPRZEDAŻY MIESZKANIA
             </h1>
             
             <h2 className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-6">
-              WYCENIAMY / NEGOCJUJEMY / SPRZEDAJEMY MIESZKANIA W WARSZAWIE
+              <span className="tracking-widest">WYCENIAMY</span> • <span className="tracking-widest">NEGOCJUJEMY</span> • <span className="tracking-widest">SPRZEDAJEMY</span> MIESZKANIA W WARSZAWIE
             </h2>
             
             <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-10">
@@ -53,7 +66,10 @@ export default function HomePage() {
               <a href="/kontakt#formularz" className="px-8 py-4 bg-yellow-300 text-black font-bold hover:-translate-y-1 transition-all duration-300 neo-border">
                 Wyceń mieszkanie
               </a>
-              <button className="px-8 py-4 golden-accent text-black font-bold hover:-translate-y-1 transition-all duration-300 neo-border">
+              <button 
+                onClick={openChat}
+                className="px-8 py-4 golden-accent text-black font-bold hover:-translate-y-1 transition-all duration-300 neo-border"
+              >
                 Zadaj pytanie asystentowi
               </button>
             </div>
@@ -259,5 +275,3 @@ export default function HomePage() {
     </Layout>
   );
 }
-
-

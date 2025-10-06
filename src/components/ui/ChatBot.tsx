@@ -14,6 +14,14 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 
+let openChatFunction: (() => void) | null = null;
+
+export const openChat = () => {
+  if (openChatFunction) {
+    openChatFunction();
+  }
+};
+
 interface Message {
   id: string;
   text: string;
@@ -21,8 +29,15 @@ interface Message {
   timestamp: Date;
 }
 
-const ChatBot = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface ChatBotProps {
+  isOpen?: boolean;
+  setIsOpen?: (isOpen: boolean) => void;
+}
+
+const ChatBot = ({ isOpen: externalIsOpen, setIsOpen: externalSetIsOpen }: ChatBotProps) => {
+  const [internalIsOpen, setInternalIsOpen] = useState(false);
+  const isOpen = externalIsOpen !== undefined ? externalIsOpen : internalIsOpen;
+  const setIsOpen = externalSetIsOpen !== undefined ? externalSetIsOpen : setInternalIsOpen;
   const [messages, setMessages] = useState<Message[]>([{
     id: '1',
     text: 'Witam w moich królewskich progach! 👑 Jestem Dobry Król, władca tych cyfrowych ziem i ekspert od sprzedaży nieruchomości. Mogę nie mieć zamku (sprzedałem go bardzo korzystnie!), ale za to znam się na nieruchomościach jak mało kto. Czym mogę służyć memu szlachetnemu poddanemu?',
@@ -32,6 +47,14 @@ const ChatBot = () => {
   const [inputText, setInputText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Register the openChat function
+  useEffect(() => {
+    openChatFunction = () => setIsOpen(true);
+    return () => {
+      openChatFunction = null;
+    };
+  }, [setIsOpen]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -106,7 +129,7 @@ const ChatBot = () => {
       <AnimatePresence>
         {!isOpen && (
           <motion.button
-            className="fixed bottom-6 right-6 z-50 w-60 h-60 overflow-visible group"
+            className="fixed bottom-6 right-6 z-50 w-28 h-28 md:w-40 md:h-40 overflow-visible group"
             onClick={() => setIsOpen(true)}
             whileHover={{ scale: 1.1, rotate: 5 }}
             whileTap={{ scale: 0.95 }}

@@ -16,6 +16,7 @@ import {
 import { useState } from 'react';
 import Layout from '../../components/layout/Layout';
 import Image from 'next/image';
+import { openChat } from '../../components/ui/ChatBot';
 
 export default function FAQPage() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
@@ -86,7 +87,7 @@ export default function FAQPage() {
       {/* Hero Section - Updated with neobrutalism style */}
       <section className="relative py-20 bg-white overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 right-[10%] w-24 h-24 rotate-12 animate-float flex items-center justify-center">
+          <div className="absolute top-20 right-[2%] w-16 h-16 rotate-12 animate-float flex items-center justify-center">
             <div className="relative w-full h-full">
               <Image 
                 src="/img/coin.png" 
@@ -99,7 +100,7 @@ export default function FAQPage() {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-20 left-[5%] w-20 h-20 -rotate-6 animate-float-reverse flex items-center justify-center">
+          <div className="absolute bottom-20 left-[2%] w-14 h-14 -rotate-6 animate-float-reverse flex items-center justify-center">
             <div className="relative w-full h-full">
               <Image 
                 src="/img/coin.png" 
@@ -112,7 +113,7 @@ export default function FAQPage() {
               </div>
             </div>
           </div>
-          <div className="absolute top-40 left-[15%] w-16 h-16 rotate-45 animate-float flex items-center justify-center">
+          <div className="absolute top-40 left-[5%] w-12 h-12 rotate-45 animate-float flex items-center justify-center">
             <div className="relative w-full h-full">
               <Image 
                 src="/img/coin.png" 
@@ -212,15 +213,19 @@ export default function FAQPage() {
           {/* CTA Section */}
           <div className="text-center mt-16">
             <div className="bg-white neo-border p-8 max-w-2xl mx-auto">
-              <Crown className="w-12 h-12 text-[var(--gold-primary)] mx-auto mb-4" />
+              <div className="flex justify-center mb-4">
+                <MessageCircle className="w-12 h-12 text-[var(--gold-primary)]" />
+              </div>
               <h3 className="royal-title text-2xl font-bold mb-4">
-                Nie znalazles odpowiedzi?
+                Nie znalazłeś odpowiedzi?
               </h3>
               <p className="text-gray-600 mb-6">
-                Nasz wirtualny doradca jest dostepny 24/7 i z checia odpowie na wszystkie Twoje pytania!
+                Nasz wirtualny doradca jest dostępny 24/7 i z checią odpowie na wszystkie Twoje pytania!
               </p>
-              <button className="neo-button-primary">
-                <MessageCircle className="w-5 h-5 mr-2" />
+              <button 
+                onClick={openChat}
+                className="neo-button-primary"
+              >
                 Porozmawiaj z Doradca
               </button>
             </div>

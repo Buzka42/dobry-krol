@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Crown, Menu, X } from 'lucide-react';
 import Image from 'next/image';
+import { openChat } from '../ui/ChatBot';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,7 +45,14 @@ const Header = () => {
               />
             </div>
             <Link href="/" className="royal-title text-2xl font-bold tracking-tight transition-all duration-300 hover:scale-105">
-              <span className="transition-transform duration-300 hover:-translate-y-1">Dobry Król</span>
+              <div className="relative w-32 h-16 md:w-40 md:h-20">
+                <Image 
+                  src="/img/dk.png" 
+                  alt="DK" 
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </Link>
           </div>
           
@@ -60,7 +68,10 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
-              <button className="text-sm font-bold px-5 py-2.5 transition-all duration-300 hover:-translate-y-1 neo-border-small bg-yellow-300 text-black relative overflow-hidden group">
+              <button 
+                onClick={openChat}
+                className="text-sm font-bold px-5 py-2.5 transition-all duration-300 hover:-translate-y-1 neo-border-small bg-yellow-300 text-black relative overflow-hidden group"
+              >
                 <span className="relative z-10">Rozpocznij Rozmowę</span>
                 <span className="absolute inset-0 golden-accent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></span>
               </button>
@@ -96,7 +107,13 @@ const Header = () => {
               {item.label}
             </Link>
           ))}
-          <button className="block bg-yellow-300 text-black text-center py-3 px-4 font-bold neo-border transition-all duration-300 hover:bg-blue-600 hover:text-white w-full">
+          <button 
+            onClick={() => {
+              setIsMenuOpen(false);
+              openChat();
+            }}
+            className="block bg-yellow-300 text-black text-center py-3 px-4 font-bold neo-border transition-all duration-300 hover:bg-blue-600 hover:text-white w-full"
+          >
             Rozpocznij Rozmowę
           </button>
         </div>
