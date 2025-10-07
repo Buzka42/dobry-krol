@@ -91,7 +91,7 @@ export default function JakSprzedajemyPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white pt-32 pb-24 md:pt-40 md:pb-32">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-[15%] right-[2%] w-12 h-12 md:w-32 md:h-32 rotate-12 animate-float flex items-center justify-center">
+          <div className="absolute top-[10%] right-[2%] w-12 h-12 md:w-32 md:h-32 rotate-12 animate-float flex items-center justify-center">
             <div className="relative w-full h-full">
               <Image 
                 src="/img/coin.png" 
@@ -104,7 +104,7 @@ export default function JakSprzedajemyPage() {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-[35%] left-[2%] w-10 h-10 md:w-24 md:h-24 -rotate-6 animate-float-reverse flex items-center justify-center">
+          <div className="absolute bottom-[30%] left-[2%] w-10 h-10 md:w-24 md:h-24 -rotate-6 animate-float-reverse flex items-center justify-center">
             <div className="relative w-full h-full">
               <Image 
                 src="/img/coin.png" 

@@ -100,7 +100,7 @@ export default function FAQPage() {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-20 left-[2%] w-14 h-14 -rotate-6 animate-float-reverse flex items-center justify-center">
+          <div className="absolute bottom-0 left-[2%] w-14 h-14 -rotate-6 animate-float-reverse flex items-center justify-center">
             <div className="relative w-full h-full">
               <Image 
                 src="/img/coin.png" 
