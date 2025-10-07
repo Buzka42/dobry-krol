@@ -54,7 +54,7 @@ export default function HomePage() {
               ZAUFANY DORADCA W SPRZEDAŻY MIESZKANIA
             </h1>
             
-            <h2 className="text-base md:text-2xl text-gray-600 max-w-2xl mx-auto mb-6">
+            <h2 className="text-[0.6rem] md:text-2xl text-gray-600 max-w-2xl mx-auto mb-6 leading-none">
               <span className="tracking-widest">WYCENIAMY</span> • <span className="tracking-widest">NEGOCJUJEMY</span> • <span className="tracking-widest">SPRZEDAJEMY</span><br/><span className="tracking-widest">MIESZKANIA W WARSZAWIE</span>
             </h2>
             
