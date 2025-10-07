@@ -22,7 +22,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-[25%] left-[2%] w-10 h-10 md:w-24 md:h-24 -rotate-6 animate-float-reverse flex items-center justify-center">
+          <div className="absolute bottom-[35%] left-[2%] w-10 h-10 md:w-24 md:h-24 -rotate-6 animate-float-reverse flex items-center justify-center">
             <div className="relative w-full h-full">
               <Image 
                 src="/img/coin.png" 

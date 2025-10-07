@@ -121,7 +121,7 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-[15%] left-[5%] w-12 h-12 md:w-24 md:h-24 -rotate-6 animate-float-reverse flex items-center justify-center">
+          <div className="absolute bottom-[35%] left-[5%] w-12 h-12 md:w-24 md:h-24 -rotate-6 animate-float-reverse flex items-center justify-center">
             <div className="relative w-full h-full">
               <Image 
                 src="/img/coin.png" 
